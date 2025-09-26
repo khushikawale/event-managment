@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin — Manage Events</title>
+  <link rel="stylesheet" href="admin-manage-events.css" />
+</head>
+<body>
+  <div class="page">
+    <aside class="sidebar">
+      <div class="logo">College Admin</div>
+      <nav>
+        <a href="admin-dashboard.html">Dashboard</a>
+        <a href="admin-manage-events.html" class="active">Manage Events</a>
+        <a href="admin-manage-notices.html">Manage Notices</a>
+        <a href="admin-login.html">Logout</a>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <header class="topbar">
+        <h1>Manage Events</h1>
+        <div class="actions">
+          <button id="btnAddEvent" class="btn primary">+ Create Event</button>
+        </div>
+      </header>
+
+      <section class="controls">
+        <input id="searchInput" type="search" placeholder="Search by title..." />
+        <select id="statusFilter">
+          <option value="all">All Statuses</option>
+          <option value="draft">Draft</option>
+          <option value="pending">Pending</option>
+          <option value="approved">Approved</option>
+          <option value="cancelled">Cancelled</option>
+        </select>
+        <button id="clearAll" class="btn neutral">Clear All Events</button>
+      </section>
+
+      <section class="main-grid">
+        <div class="panel list-panel">
+          <h2>Event List</h2>
+          <table id="eventsTable">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Venue</th>
+                <th>Status</th>
+                <th style="width:120px">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- rendered by JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="panel calendar-panel">
+          <h2 id="calendarTitle">Calendar</h2>
+          <div class="calendar-controls">
+            <button id="prevMonth" class="btn small">Prev</button>
+            <button id="nextMonth" class="btn small">Next</button>
+            <span id="monthYear" class="muted"></span>
+          </div>
+
+          <div id="calendar" class="calendar"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Modal for Add/Edit -->
+  <div id="eventModal" class="modal" aria-hidden="true">
+    <div class="modal-dialog">
+      <h3 id="modalTitle">Create Event</h3>
+      <form id="eventForm">
+        <input type="hidden" id="eventId">
+
+        <label>Title</label>
+        <input id="title" required>
+
+        <label>Date</label>
+        <input id="date" type="date" required>
+
+        <div class="row">
+          <div style="flex:1">
+            <label>Start Time</label>
+            <input id="startTime" type="time">
+          </div>
+          <div style="flex:1; margin-left:10px">
+            <label>End Time</label>
+            <input id="endTime" type="time">
+          </div>
+        </div>
+
+        <label>Venue</label>
+        <input id="venue">
+
+        <label>Description</label>
+        <textarea id="description" rows="3"></textarea>
+
+        <label>Status</label>
+        <select id="status">
+          <option value="draft">Draft</option>
+          <option value="pending">Pending</option>
+          <option value="approved">Approved</option>
+          <option value="cancelled">Cancelled</option>
+        </select>
+
+        <div class="modal-actions">
+          <button type="button" id="cancelModal" class="btn neutral">Cancel</button>
+          <button type="submit" class="btn primary">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="admin-manage-events.js"></script>
+</body>
+</html>
