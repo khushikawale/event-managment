@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Faculty Dashboard - College</title>
+
+  <!-- reuse the same CSS you used for admin dashboard -->
+  <link rel="stylesheet" href="faculty-dashboard-style.css">
+
+  <!-- Chart.js for visual summaries -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">College Portal</div>
+      <nav>
+        <a href="faculty-dashboard.html" class="active">Dashboard</a>
+        <a href="events.html">My Events</a>
+        <a href="notices.html">Notices</a>
+        <a href="#">My Profile</a>
+        <a href="admin-login.html">Logout</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header>
+        <div>
+          <h1>Welcome, Faculty</h1>
+          <p class="muted">Overview of your events, notices and recent activity</p>
+        </div>
+
+        <div class="header-actions">
+          <button class="quick-btn" id="btn-create-notice">+ Create Notice</button>
+          <button class="quick-btn secondary" id="btn-request-event">+ Request Event</button>
+        </div>
+      </header>
+
+      <!-- Row: Calendar -->
+      <section class="calendar-section">
+        <h2>Upcoming (This Month)</h2>
+        <div class="calendar">
+          <table>
+            <thead>
+              <tr>
+                <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th>
+                <th>Thu</th><th>Fri</th><th>Sat</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td>
+              </tr>
+              <tr>
+                <td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td class="event">12<br><span class="chip">Dept Meeting</span></td><td>13</td>
+              </tr>
+              <tr>
+                <td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Row: Quick actions + System alerts -->
+      <section class="actions-alerts">
+        <div class="card small">
+          <h3>Quick Actions</h3>
+          <div class="quick-grid">
+            <button class="action">Create Notice</button>
+            <button class="action">Request Event</button>
+            <button class="action">View My Registrations</button>
+            <button class="action">Download Attendance</button>
+          </div>
+        </div>
+
+        <div class="card small">
+          <h3>System Alerts</h3>
+          <ul>
+            <li>2 notices need revisions</li>
+            <li>1 event request awaiting approval</li>
+            <li>Venue A blocked on 25th</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Row: Notices + Charts -->
+      <section class="notices-charts">
+        <div class="card">
+          <h3>Recent Notices (you posted)</h3>
+          <ul class="list">
+            <li>
+              <strong>Lab schedule update</strong>
+              <div class="muted small">Published 3 days ago — Views: 42</div>
+            </li>
+            <li>
+              <strong>Guest lecture: AI Ethics</strong>
+              <div class="muted small">Pending approval</div>
+            </li>
+            <li>
+              <strong>Seminar: Research Methods</strong>
+              <div class="muted small">Published 10 days ago — Views: 85</div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card charts-vertical">
+          <h3>Engagement & Participation</h3>
+          <div class="chart-card-small">
+            <canvas id="facultyEventChart" height="160"></canvas>
+          </div>
+          <div class="chart-card-small" style="margin-top:14px;">
+            <canvas id="facultyNoticeChart" height="120"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- Row: Activity log -->
+      <section class="card">
+        <h3>Recent Activity</h3>
+        <ul class="activity-log">
+          <li> You created notice "Lab schedule update" — 3 days ago</li>
+          <li> You requested event "Guest lecture" — 5 days ago</li>
+          <li> Student registrations updated for "Seminar" — 7 days ago</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <!-- Faculty-specific script (charts + simple interactivity) -->
+  <script src="faculty-dashboard-script.js"></script>
+</body>
+</html>
