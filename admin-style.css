@@ -1,0 +1,154 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f4f6f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url("download.jpeg") no-repeat center center fixed;
+    background-size: cover;
+
+}
+
+/* Login Card */
+.login-wrapper {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.login-card {
+    background-color: rgb(206, 239, 243);
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 25px rgba(10, 2, 2, 0.1);
+    text-align: center;
+}
+
+.logo img {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Input fields */
+.input-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.input-group input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Forgot Password */
+.forgot-password {
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+.forgot-password a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 13px;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+/* Login Button */
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Error Message */
+.error-message {
+    color: red;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* Social Login */
+.social-login {
+    margin-top: 20px;
+}
+
+.social-login p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.social-btn {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.google-btn {
+    border-color: #db4437;
+    color: #db4437;
+}
+
+.google-btn:hover {
+    background-color: #fce8e6;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .login-card {
+        padding: 25px 15px;
+    }
+    .logo img {
+        width: 80px;
+    }
+}
