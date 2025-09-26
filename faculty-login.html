@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Login - College</title>
+    <link rel="stylesheet" href="faculty-style.css">
+</head>
+<body>
+    <div class="login-wrapper">
+        <div class="login-card">
+            <!-- College Logo -->
+            <div class="logo">
+                <img src="college-logo.png" alt="College Logo">
+            </div>
+
+            <h2>Faculty Login</h2>
+            <p>Welcome back! Please login to your account.</p>
+
+            <!-- Login Form -->
+            <form id="facultyLoginForm">
+                <div class="input-group">
+                    <label for="facultyUsername">Username</label>
+                    <input type="text" id="facultyUsername" placeholder="Enter your username" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="facultyPassword">Password</label>
+                    <input type="password" id="facultyPassword" placeholder="Enter your password" required>
+                </div>
+
+                <div class="forgot-password">
+                    <a href="#">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="login-btn">Login</button>
+
+                <p id="facultyErrorMessage" class="error-message"></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="faculty-script.js"></script>
+</body>
+</html>
