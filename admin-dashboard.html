@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - College</title>
+    <link rel="stylesheet" href="admin-dashboard-style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- For charts -->
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">College Admin</div>
+            <nav>
+                <a href="#" class="active">Dashboard</a>
+                <a href="events.html">Manage Events</a>
+                <a href="notices.html">Manage Notices</a>
+                <a href="#">Users</a>
+                <a href="admin-login.html">Logout</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header>
+                <h1>Welcome, Admin</h1>
+                <button class="quick-btn">+ Add Event</button>
+                <button class="quick-btn">+ Add Notice</button>
+            </header>
+
+            <!-- Calendar Section -->
+            <section class="calendar-section">
+                <h2>Upcoming Events</h2>
+                <div class="calendar">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th>
+                                <th>Thu</th><th>Fri</th><th>Sat</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td>
+                            </tr>
+                            <tr>
+                                <td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td>
+                            </tr>
+                            <tr>
+                                <td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Notices Section -->
+            <section class="notices-section">
+                <h2>Recent Notices</h2>
+                <ul>
+                    <li>Exam schedule released - Pending Approval</li>
+                    <li>Library closed on Friday</li>
+                    <li>New sports event announced</li>
+                </ul>
+            </section>
+
+            <!-- Visual Data Summaries -->
+            <section class="charts-section">
+                <div class="chart-card">
+                    <h3>Event Participation</h3>
+                    <canvas id="eventChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>Notice Engagement</h3>
+                    <canvas id="noticeChart"></canvas>
+                </div>
+            </section>
+
+            <!-- System Alerts -->
+            <section class="alerts-section">
+                <h2>System Alerts</h2>
+                <ul>
+                    <li>Pending approvals for 3 events</li>
+                    <li>2 notices not yet published</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <script src="admin-dashboard-script.js"></script>
+</body>
+</html>
