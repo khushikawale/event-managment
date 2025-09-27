@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Student Dashboard - College</title>
+
+  <!-- reuse the same CSS used for admin and faculty -->
+  <link rel="stylesheet" href="student-dashboard-style.css">
+
+  <!-- Chart.js for visual summaries -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">College Portal</div>
+      <nav>
+        <a href="student-dashboard.html" class="active">Dashboard</a>
+        <a href="events.html">Events</a>
+        <a href="notices.html">Notices</a>
+        <a href="#">My Profile</a>
+        <a href="student-login.html">Logout</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header>
+        <div>
+          <h1>Welcome, Student</h1>
+          <p class="muted">Quick view of your events, notices and registrations</p>
+        </div>
+
+        <div class="header-actions">
+          <button class="quick-btn" id="btn-view-events">View Events</button>
+          <button class="quick-btn secondary" id="btn-my-registrations">My Registrations</button>
+        </div>
+      </header>
+
+      <!-- Calendar Section -->
+      <section class="calendar-section">
+        <h2>Upcoming Events (This Month)</h2>
+        <div class="calendar small-calendar">
+          <table>
+            <thead>
+              <tr>
+                <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th>
+                <th>Thu</th><th>Fri</th><th>Sat</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td>
+              </tr>
+              <tr>
+                <td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td class="event">12<br><span class="chip">Club Meet</span></td><td>13</td>
+              </tr>
+              <tr>
+                <td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Row: Registered events + Notices -->
+      <section class="notices-charts">
+        <div class="card">
+          <h3>My Registered Events</h3>
+          <ul class="list">
+            <li>
+              <strong>Research Seminar: ML</strong>
+              <div class="muted small">Date: 12 Sep 2025 — Status: Registered</div>
+              <div class="action-row">
+                <button class="action tiny" data-event="seminar-ml">View</button>
+                <button class="action tiny danger" data-event="seminar-ml">Cancel</button>
+              </div>
+            </li>
+            <li>
+              <strong>Sports Tryouts</strong>
+              <div class="muted small">Date: 18 Sep 2025 — Status: Waitlisted</div>
+              <div class="action-row">
+                <button class="action tiny" data-event="sports-try">View</button>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Recent Notices</h3>
+          <ul class="list">
+            <li>
+              <strong>Exam Timetable Released</strong>
+              <div class="muted small">Published: 5 days ago — Views: 120</div>
+              <div class="action-row">
+                <button class="action tiny">Read</button>
+              </div>
+            </li>
+            <li>
+              <strong>Library Hours Change</strong>
+              <div class="muted small">Published: 2 days ago</div>
+              <div class="action-row">
+                <button class="action tiny">Read</button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Row: Engagement Chart -->
+      <section class="charts-section">
+        <div class="chart-card">
+          <h3>My Event Attendance (last 6 months)</h3>
+          <canvas id="studentEventChart" height="160"></canvas>
+        </div>
+
+        <div class="chart-card">
+          <h3>Notice Read Rate</h3>
+          <canvas id="studentNoticeChart" height="160"></canvas>
+        </div>
+      </section>
+
+      <!-- Row: Activity log -->
+      <section class="card">
+        <h3>Activity</h3>
+        <ul class="activity-log">
+          <li>Registered for "Research Seminar: ML" — 3 days ago</li>
+          <li>Acknowledged notice "Exam Timetable" — 2 days ago</li>
+          <li>Cancelled registration for "Workshop on AI" — 1 week ago</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <!-- Student-specific script -->
+  <script src="student-dashboard-script.js"></script>
+</body>
+</html>
